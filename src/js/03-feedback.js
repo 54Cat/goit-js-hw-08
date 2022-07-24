@@ -50,7 +50,7 @@ function sendMessege(evt) {
         return;
     };
 
-    console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
+    console.log(feedbackForm);
 
     form.reset();
     localStorage.removeItem(LOCALSTORAGE_KEY);
