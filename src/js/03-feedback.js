@@ -55,6 +55,8 @@ function sendMessege(evt) {
 
 function updateOutput() {
     const sevedDataMes = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-    email.value = (sevedDataMes.email) || "";
-    message.value = (sevedDataMes.message) || "";
+    if (sevedDataMes) {
+        email.value = sevedDataMes.email;
+        message.value = sevedDataMes.message;
+    }
 }
