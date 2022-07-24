@@ -47,7 +47,13 @@ updateOutput();
 function sendMessege(evt) {
     evt.preventDefault();
 
-    console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
+    const sevedDataMes = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+    if (sevedDataMes.email === "" || sevedDataMes.message === "") {
+        alert('Пожалуйста, заполните поля "Email" и "Message"!'); 
+        return;
+    };
+
+    console.log(sevedDataMes);
 
     form.reset();
     localStorage.removeItem(LOCALSTORAGE_KEY);
