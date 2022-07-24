@@ -40,20 +40,17 @@ function saveMessage(evt) {
     feedbackForm.email = email.value;
     feedbackForm.message = message.value;
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(feedbackForm));
-updateOutput();
-
 }
 
 function sendMessege(evt) {
     evt.preventDefault();
 
-    const sevedDataMes = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-    if (sevedDataMes.email === "" || sevedDataMes.message === "") {
+    if (email.value === "" || message.value === "") {
         alert('Пожалуйста, заполните поля "Email" и "Message"!'); 
         return;
     };
 
-    console.log(sevedDataMes);
+    console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
 
     form.reset();
     localStorage.removeItem(LOCALSTORAGE_KEY);

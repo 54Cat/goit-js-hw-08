@@ -31,7 +31,6 @@ const player = new Player(iframe);
 const onPlay = function (data) {
     const savedTime = data.seconds;
     localStorage.setItem("videoplayer-current-time", savedTime);
-    console.log("videoplayer-current-time", savedTime, "sec");
 };
 
 player.on('timeupdate', throttle(onPlay, 1000));
